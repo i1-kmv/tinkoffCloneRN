@@ -25,7 +25,7 @@ export const AuthProvider:FC = ({children}) => {
         setIsLoading(true)
         const db = getFirestore()
         try {
-            const { user } = await register(email, password)
+            const {user} = await register(email, password)
             
             await addDoc(collection(db , 'users'), {
                 _id: user.uid,
